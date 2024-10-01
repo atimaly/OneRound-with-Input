@@ -1,4 +1,4 @@
-pub mod cartesian{
+pub mod cartesian {
     use anyhow::{anyhow, Result};
     use itertools::structs::MultiProduct;
     use itertools::Itertools;
@@ -17,13 +17,11 @@ pub mod cartesian{
     /// Because CartesianProductIterator based on references to the original object
     /// One can not simply just  return a CartesianProductIterator// Assuming you have already defined CartesianProductIterator somewhere
     /// Function that returns an iterator over the Cartesian product of ranges [0..a_1-1], [0..a_2-1], ..., [0..a_n-1]
-pub fn cartesian_product_ranges(a: Vec<usize>) -> MultiProduct<Range<usize>> {
-    // Step 1: Create a vector of ranges based on the elements of `a`
-    let ranges: Vec<std::ops::Range<usize>> = a.iter().map(|&x| 0..x).collect();
+    pub fn cartesian_product_ranges(a: Vec<usize>) -> MultiProduct<Range<usize>> {
+        // Step 1: Create a vector of ranges based on the elements of `a`
+        let ranges: Vec<std::ops::Range<usize>> = a.iter().map(|&x| 0..x).collect();
 
-    // Step 2: Return the iterator of the Cartesian product
-    ranges.into_iter().multi_cartesian_product()
+        // Step 2: Return the iterator of the Cartesian product
+        ranges.into_iter().multi_cartesian_product()
+    }
 }
-}
-
-

@@ -274,7 +274,7 @@ pub mod mapping_problem {
             self.hashmaped_good_pairings = new_hashmaping;
         }
 
-        ///For every input node config calculate how many possible mappings are left in the current
+        ///For every input node config give back a cartesian product of possible mappings in the current
         /// Configuations mapping and create a Cartesian product on which we can iterate over
         pub fn cartesian_choices_hashed(&self) -> MultiProduct<Range<usize>> {
             let cartesian: Vec<usize> = self
@@ -282,6 +282,40 @@ pub mod mapping_problem {
                 .iter()
                 .map(|v| v.len()) // Map each element to its length
                 .collect(); // Collect the results into a Vec<usize>
+
+            crate::cartesian::cartesian::cartesian_product_ranges(cartesian)
+        }
+
+        /// Given a vector with indices pointing to hashmaped_good_pairings different elements
+        /// so chosen_label_maps[i] is in 0..hashmaped_good_pairings[i]
+        /// returns for every a Hashmap<label, Hashset<label>> so for
+        /// every input label the possible output labels in this label mapping
+        pub fn possible_labels(
+            &self,
+            chosen_label_maps: &Vec<usize>,
+        ) -> HashMap<Group, HashSet<Group>> {
+            let mut result = HashMap::new();
+
+            for (indi_v, v) in chosen_label_maps.iter().enumerate() {
+                let map = &self.hashmaped_good_pairings[indi_v][*v];
+                for (key, value_set) in map {
+                    // Entry API allows updating the value if the key already exists
+                    result
+                        .entry((*key).clone())
+                        .or_insert_with(HashSet::new)
+                        .extend((*value_set).clone());
+                }
+            }
+            result
+        }
+
+        /// Given an edge in the input problem and the chosen config and label mappings with the condensed labels (self.possible_labels's return)
+        /// It gives back an cartesian multiproduct for the 
+        pub fn cartesian_choices_edge_creation(&self, chosen_hashmaped_goods: &Vec<usize>) -> MultiProduct<Range<usize>> {
+            let mut cartesian: Vec<usize> = Vec::new();
+            for (ind, v) in chosen_hashmaped_goods.iter().enumerate() {
+                cartesian.push(self.hashmaped_good_pairings[ind][*v].len());
+            }
 
             crate::cartesian::cartesian::cartesian_product_ranges(cartesian)
         }
@@ -697,7 +731,8 @@ mod tests {
     #[test]
     fn iterate_cartesians_1def_2coloring() {
         let mut test = MappingProblem::new(
-            Problem::from_string("A A A\nA A X\nB B B\nB B Y\n\nA B\nA Y\nX B\nX Y\nX X\nX Y\nY Y").unwrap(),
+            Problem::from_string("A A A\nA A X\nB B B\nB B Y\n\nA B\nA Y\nX B\nX Y\nX X\nX Y\nY Y")
+                .unwrap(),
             Problem::from_string("A A X\nB B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap(),
         );
         test.long_describ_problems();
@@ -705,7 +740,6 @@ mod tests {
         println!("Current config mapping: {:?}", curr_config);
         let mut label_map = test.labelmapping_from_the_config(&curr_config).unwrap();
 
-       
         label_map.hashmaped_pairings_filling();
         println!(
             "Every hashmapping for every node configuration: {:?}",
@@ -713,7 +747,7 @@ mod tests {
         );
         label_map.hashed_pairings_reducing();
         println!(
-            "Every hashmapping for every node configuration: {:?}",
+            "Every hashmapping for every node configuration after reduction: {:?}",
             label_map.hashmaped_good_pairings()[0]
         );
 
@@ -727,11 +761,88 @@ mod tests {
             );
         }
 
-        let mut all_maps_combinations = label_map.cartesian_choices_hashed();
-        for i in 0..4 {
-            for j in 0..10 {
-                //assert_eq!(all_maps_combinations.next(), Some(vec![i, j]));
-            }
+        let mut cartesian_labels_poss = label_map.cartesian_choices_hashed();
+
+        let curr = cartesian_labels_poss.next().unwrap();
+        println!("Current summarized label mapping: {:?}, with cartesian choosing of: {:?}", label_map.possible_labels(&curr), curr);
+
+        let map_corr: HashMap<Group, HashSet<Group>> = HashMap::from([
+            (
+                Group(vec![1]),
+                HashSet::from([Group(vec![1])]),
+            ),
+            (
+                Group(vec![3]),
+                HashSet::from([Group(vec![1])]),
+            ),
+            (
+                Group(vec![0]),
+                HashSet::from([Group(vec![0]), Group(vec![1])]),
+            ),
+            (
+                Group(vec![2]),
+                HashSet::from([Group(vec![1]), Group(vec![0])]),
+            ),
+        ]);
+
+        assert_eq!(map_corr, label_map.possible_labels(&curr));
+    }
+
+
+    #[test]
+    fn iterate_cartesians_MIS() {
+        let mut test = MappingProblem::new(
+            Problem::from_string("M M M\nP O O\n\nM P\nO OM")
+                .unwrap(),
+            Problem::from_string("A A X\nB B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap(),
+        );
+        test.long_describ_problems();
+        let curr_config = test.next_config().unwrap();
+        println!("Current config mapping: {:?}", curr_config);
+        let mut label_map = test.labelmapping_from_the_config(&curr_config).unwrap();
+
+        label_map.hashmaped_pairings_filling();
+        println!(
+            "Every hashmapping for every node configuration: {:?}",
+            label_map.hashmaped_good_pairings()[0]
+        );
+        label_map.hashed_pairings_reducing();
+        println!(
+            "Every hashmapping for every node configuration after reduction: {:?}",
+            label_map.hashmaped_good_pairings()[0]
+        );
+
+        println!("\n\n");
+        for (indi, v) in label_map.hashmaped_good_pairings().iter().enumerate() {
+            println!(
+                "The indi: {:?}, have the following hasmaps: {:?}, have the size of {:?}",
+                indi,
+                v,
+                v.len()
+            );
         }
+
+        let mut cartesian_labels_poss = label_map.cartesian_choices_hashed();
+
+        let mut curr = cartesian_labels_poss.next().unwrap();
+        curr = cartesian_labels_poss.next().unwrap();
+        println!("Current summarized label mapping: {:?}, with cartesian choosing of: {:?}", label_map.possible_labels(&curr), curr);
+
+        let map_corr: HashMap<Group, HashSet<Group>> = HashMap::from([
+            (
+                Group(vec![1]),
+                HashSet::from([Group(vec![0])]),
+            ),
+            (
+                Group(vec![2]),
+                HashSet::from([Group(vec![1]), Group(vec![0])]),
+            ),
+            (
+                Group(vec![0]),
+                HashSet::from([Group(vec![1]), Group(vec![0])]),
+            ),
+        ]);
+
+        assert_eq!(map_corr, label_map.possible_labels(&curr));
     }
 }
