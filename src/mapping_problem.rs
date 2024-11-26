@@ -274,7 +274,7 @@ pub mod mapping_problem {
             self.hashmaped_good_pairings = new_hashmaping;
         }
 
-        ///For every input node config give back a cartesian product of possible mappings in the current
+        ///For every input node config give back a cartesian product of possible mappings to the ouput config in the current
         /// Configuations mapping and create a Cartesian product on which we can iterate over
         pub fn cartesian_choices_hashed(&self) -> MultiProduct<Range<usize>> {
             let cartesian: Vec<usize> = self
@@ -309,15 +309,37 @@ pub mod mapping_problem {
             result
         }
 
-        /// Given an edge in the input problem and the chosen config and label mappings with the condensed labels (self.possible_labels's return)
-        /// It gives back an cartesian multiproduct for the 
-        pub fn cartesian_choices_edge_creation(&self, chosen_hashmaped_goods: &Vec<usize>) -> MultiProduct<Range<usize>> {
-            let mut cartesian: Vec<usize> = Vec::new();
-            for (ind, v) in chosen_hashmaped_goods.iter().enumerate() {
-                cartesian.push(self.hashmaped_good_pairings[ind][*v].len());
-            }
 
-            crate::cartesian::cartesian::cartesian_product_ranges(cartesian)
+        /// Given an edge from the input problem and the possible labelings that are achieved by the current $$f$$ config mapping and the label mappings $$g_l$$
+        /// returns all of the possible edges with indexes to the possible labelings HashSet<Group>
+        pub fn possible_edges(&self,  edge_index: usize, possible_labelings: &HashMap<Group, HashSet<Group>>) -> String {
+            assert!(edge_index < self.mapping_problem.input_all_node_config.len());
+            // Access parts for the given edge
+            let parts = &self.mapping_problem.input_all_node_config[edge_index].parts;
+
+            // Collect the mapping for label to string
+            let mapping: HashMap<u32, String> = self.mapping_problem
+                .output_problem
+                .mapping_label_text
+                .iter()
+                .cloned()
+                .collect();
+
+            // Process each part of the edge, considering possible_labelings
+            parts
+            .iter()
+            .map(|part| {
+                // Find possible labelings for the current group
+                let mut possibs: String = String::new();
+                for gr in part.group.iter()    {
+                    if let Some(label_set) = possible_labelings.get(&part.group) {
+                        possibs = label_set.iter().map(|l| mapping.get(&l[0]).unwrap()).collect::<Vec<&String>>().into_iter().join("");
+                    }
+                }
+                possibs
+            })
+            .join(" ") // Join all parts with spaces to represent the full edge
+
         }
 
         pub fn all_good_pairings(&self) -> &Vec<Vec<Vec<usize>>> {
@@ -743,12 +765,12 @@ mod tests {
         label_map.hashmaped_pairings_filling();
         println!(
             "Every hashmapping for every node configuration: {:?}",
-            label_map.hashmaped_good_pairings()[0]
+            label_map.hashmaped_good_pairings()
         );
         label_map.hashed_pairings_reducing();
         println!(
             "Every hashmapping for every node configuration after reduction: {:?}",
-            label_map.hashmaped_good_pairings()[0]
+            label_map.hashmaped_good_pairings()
         );
 
         println!("\n\n");
@@ -804,18 +826,18 @@ mod tests {
         label_map.hashmaped_pairings_filling();
         println!(
             "Every hashmapping for every node configuration: {:?}",
-            label_map.hashmaped_good_pairings()[0]
+            label_map.hashmaped_good_pairings()
         );
         label_map.hashed_pairings_reducing();
         println!(
             "Every hashmapping for every node configuration after reduction: {:?}",
-            label_map.hashmaped_good_pairings()[0]
+            label_map.hashmaped_good_pairings()
         );
 
         println!("\n\n");
         for (indi, v) in label_map.hashmaped_good_pairings().iter().enumerate() {
             println!(
-                "The indi: {:?}, have the following hasmaps: {:?}, have the size of {:?}",
+                "The indi config: {:?}, have the following hasmaps: {:?}, have the size of {:?}",
                 indi,
                 v,
                 v.len()
@@ -844,5 +866,114 @@ mod tests {
         ]);
 
         assert_eq!(map_corr, label_map.possible_labels(&curr));
+    }
+
+    #[test]
+    fn iterate_cartesians_MIS_edges() {
+        let out_p = Problem::from_string("A A X\nB B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap();
+        //out_p.maximi
+        let mut test = MappingProblem::new(
+            Problem::from_string("M M M\nP O O\n\nM P\nO OM")
+                .unwrap(),
+            out_p,
+        );
+        test.long_describ_problems();
+        let curr_config = test.next_config().unwrap();
+        println!("Current config mapping: {:?}", curr_config);
+        let mut label_map = test.labelmapping_from_the_config(&curr_config).unwrap();
+
+        label_map.hashmaped_pairings_filling();
+        println!(
+            "Every hashmapping for every node configuration: {:?}",
+            label_map.hashmaped_good_pairings()
+        );
+        label_map.hashed_pairings_reducing();
+        println!(
+            "Every hashmapping for every node configuration after reduction: {:?}",
+            label_map.hashmaped_good_pairings()
+        );
+
+        println!("\n\n");
+        for (indi, v) in label_map.hashmaped_good_pairings().iter().enumerate() {
+            println!(
+                "The indi config: {:?}, have the following hasmaps: {:?}, have the size of {:?}",
+                indi,
+                v,
+                v.len()
+            );
+        }
+
+        let mut cartesian_labels_poss = label_map.cartesian_choices_hashed();
+
+        while let Some(curr) = cartesian_labels_poss.next() {
+            // Get the possible labels for the current configuration
+            let possible_labels = label_map.possible_labels(&curr);
+
+            for edge_index in 0..test.input_all_node_config.len() {
+                // Generate the possible edges for the current edge index
+                let edges = label_map.possible_edges(edge_index, &possible_labels);
+    
+                // Print the edge index and corresponding edges
+                println!(
+                    "Edge index: {}, Current label mapping: {:?}, Possible edges: {}",
+                    edge_index, curr, edges
+                );
+            }
+        }
+        
+    }
+
+    #[test]
+    fn iterate_cartesians_1def_2coloring_edges() {
+        let mut test = MappingProblem::new(
+            Problem::from_string("A A A\nA A X\nB B B\nB B Y\n\nA B\nA Y\nX B\nX Y\nX X\nX Y\nY Y")
+                .unwrap(),
+            Problem::from_string("A A X\nB B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap(),
+        );
+        test.long_describ_problems();
+        let curr_config = test.next_config().unwrap();
+        println!("Current config mapping: {:?}", curr_config);
+        let mut label_map = test.labelmapping_from_the_config(&curr_config).unwrap();
+
+        label_map.hashmaped_pairings_filling();
+        println!(
+            "Every hashmapping for every node configuration: {:?}",
+            label_map.hashmaped_good_pairings()
+        );
+        label_map.hashed_pairings_reducing();
+        println!(
+            "Every hashmapping for every node configuration after reduction: {:?}",
+            label_map.hashmaped_good_pairings()
+        );
+
+        println!("\n\n");
+        for (indi, v) in label_map.hashmaped_good_pairings().iter().enumerate() {
+            println!(
+                "The indi: {:?}, have the following hasmaps: {:?}, have the size of {:?}",
+                indi,
+                v,
+                v.len()
+            );
+        }
+
+        let mut cartesian_labels_poss = label_map.cartesian_choices_hashed();
+
+        while let Some(curr) = cartesian_labels_poss.next() {
+            // Get the possible labels for the current configuration
+            let possible_labels = label_map.possible_labels(&curr);
+
+            println!("Possible labels for gruops: {:?}", possible_labels);
+
+            for edge_index in 0..test.input_all_node_config.len() {
+                // Generate the possible edges for the current edge index
+                let edges = label_map.possible_edges(edge_index, &possible_labels);
+    
+                // Print the edge index and corresponding edges
+                println!(
+                    "Edge index: {}, Current label mapping: {:?}, Possible edges: {}",
+                    edge_index, curr, edges
+                );
+            }
+        }
     }
 }
