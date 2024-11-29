@@ -4,6 +4,7 @@ pub mod mapping_problem {
     use itertools::structs::MultiProduct;
     use itertools::Itertools;
     use permutator::CartesianProductIterator;
+    use round_eliminator_lib::algorithms::event::EventHandler;
     use round_eliminator_lib::algorithms::multisets_pairing::{Comb, Pairings};
     use round_eliminator_lib::group::{Group, GroupType, Label};
     use round_eliminator_lib::line::Line;
@@ -122,7 +123,7 @@ pub mod mapping_problem {
                 all_good_pairings: vec![],
                 hashmaped_good_pairings: vec![
                     Vec::new();
-                    mapping_problem.input_all_node_config.len()
+                    mapping_problem.input_all_node_config_active.len()
                 ], //Vec::with_capacity(mapping_problem.input_all_node_config.len()),
             })
         }
@@ -145,9 +146,9 @@ pub mod mapping_problem {
             let mut curr_matching: HashMap<Group, HashSet<Group>> = HashMap::new();
 
             let from_id = pairing.1;
-            let from_line = &self.mapping_problem.input_all_node_config[from_id];
+            let from_line = &self.mapping_problem.input_all_node_config_active[from_id];
             let to_id = pairing.2;
-            let to_line = &self.mapping_problem.output_all_node_config[to_id];
+            let to_line = &self.mapping_problem.output_all_node_config_active[to_id];
 
             for (ind_r, row) in matrix.iter().enumerate() {
                 let input_group = &from_line.parts[ind_r].group;
@@ -266,7 +267,7 @@ pub mod mapping_problem {
         /// For every input node configuration we wish to throw out label_maps that contain even just one other label_map
         pub fn hashed_pairings_reducing(&mut self) {
             let mut new_hashmaping =
-                vec![Vec::new(); self.mapping_problem.input_all_node_config.len()];
+                vec![Vec::new(); self.mapping_problem.input_all_node_config_active.len()];
             for (from_id, label_maps) in self.hashmaped_good_pairings.iter().enumerate() {
                 new_hashmaping[from_id] =
                     self.hashed_pairings_reducing_for_config(from_id, label_maps);
@@ -311,11 +312,11 @@ pub mod mapping_problem {
 
 
         /// Given an edge from the input problem and the possible labelings that are achieved by the current $$f$$ config mapping and the label mappings $$g_l$$
-        /// returns all of the possible edges with indexes to the possible labelings HashSet<Group>
+        /// returns all of the possible edges as string which can be interpreted as Line
         pub fn possible_edges(&self,  edge_index: usize, possible_labelings: &HashMap<Group, HashSet<Group>>) -> String {
-            assert!(edge_index < self.mapping_problem.input_all_node_config.len());
+            assert!(edge_index < self.mapping_problem.input_all_node_config_passive.len());
             // Access parts for the given edge
-            let parts = &self.mapping_problem.input_all_node_config[edge_index].parts;
+            let parts = &self.mapping_problem.input_all_node_config_passive[edge_index].parts;
 
             // Collect the mapping for label to string
             let mapping: HashMap<u32, String> = self.mapping_problem
@@ -336,7 +337,18 @@ pub mod mapping_problem {
                         possibs = label_set.iter().map(|l| mapping.get(&l[0]).unwrap()).collect::<Vec<&String>>().into_iter().join("");
                     }
                 }
-                possibs
+                if let GroupType::Many(exponent) = part.gtype {
+                    // Access the Exponent variable and perform operations
+                    if(exponent != 1) {
+                        possibs.push_str(&format!("^{}", exponent));
+                    }
+                    possibs
+                } else {
+                    // Handle the case where part.gtype is GroupType::Star
+                    // Add alternative logic here if necessary
+                    possibs
+                }
+
             })
             .join(" ") // Join all parts with spaces to represent the full edge
 
@@ -371,9 +383,13 @@ pub mod mapping_problem {
         input_problem: Problem,
         output_problem: Problem,
         //Every possible node configuration for the input problem
-        pub input_all_node_config: Vec<Line>,
+        pub input_all_node_config_active: Vec<Line>,
         //Every possible node configuration for the output problem
-        pub output_all_node_config: Vec<Line>,
+        pub output_all_node_config_active: Vec<Line>,
+        //Every possible node configuration for the input problem
+        pub input_all_node_config_passive: Vec<Line>,
+        //Every possible node configuration for the output problem
+        pub output_all_node_config_passive: Vec<Line>,
         configurations_map: ConfigurationsMapping,
     }
 
@@ -381,13 +397,17 @@ pub mod mapping_problem {
         pub fn new(in_p: Problem, out_p: Problem) -> MappingProblem {
             let input_all_node_config = in_p.active.all_choices(true);
             let output_all_node_config = out_p.active.all_choices(true);
+            let input_all_node_config_passive = in_p.passive.all_choices(true);
+            let output_all_node_config_passive = out_p.passive.all_choices(true);
             let in_p_size = input_all_node_config.len();
             let out_p_size = output_all_node_config.len();
             MappingProblem {
                 input_problem: in_p,
                 output_problem: out_p,
-                input_all_node_config: input_all_node_config,
-                output_all_node_config: output_all_node_config,
+                input_all_node_config_active: input_all_node_config,
+                output_all_node_config_active: output_all_node_config,
+                input_all_node_config_passive: input_all_node_config_passive,
+                output_all_node_config_passive: output_all_node_config_passive,
                 configurations_map: ConfigurationsMapping::new(in_p_size, out_p_size),
             }
         }
@@ -407,6 +427,20 @@ pub mod mapping_problem {
             for v in self.input_problem.active.all_choices(true) {
                 println!("{}", v.to_string(&mapping));
             }
+
+            println!(
+                "Input passive: {:?}",
+                self.input_problem.active.all_choices(true)
+            );
+            let mapping = self
+                .input_problem
+                .mapping_label_text
+                .iter()
+                .cloned()
+                .collect();
+            for v in self.input_problem.passive.all_choices(true) {
+                println!("{}", v.to_string(&mapping));
+            }
             //println!("{:?}", self.input_problem.passive.all_choices(true));
 
             //println!("{:?}", self.output_problem.active.all_choices(true));
@@ -421,6 +455,20 @@ pub mod mapping_problem {
                 .cloned()
                 .collect();
             for v in self.output_problem.active.all_choices(true) {
+                println!("{}", v.to_string(&mapping));
+            }
+
+            println!(
+                "Output passive: {:?}",
+                self.output_problem.active.all_choices(true)
+            );
+            let mapping = self
+                .output_problem
+                .mapping_label_text
+                .iter()
+                .cloned()
+                .collect();
+            for v in self.output_problem.passive.all_choices(true) {
                 println!("{}", v.to_string(&mapping));
             }
         }
@@ -462,14 +510,70 @@ pub mod mapping_problem {
         ) -> Result<LabelMapping> {
             LabelMapping::new(
                 &self,
-                &self.input_all_node_config,
-                &self.output_all_node_config,
+                &self.input_all_node_config_active,
+                &self.output_all_node_config_active,
                 &config_map,
             )
         }
 
         pub fn next_config(&mut self) -> Option<Vec<usize>> {
             self.configurations_map.next()
+        }
+
+
+        pub fn maximize_out_problem(&mut self) {
+            self.output_problem.passive.maximize(&mut EventHandler::null());
+        }
+
+        /// Tries to find a correct mapping configuration.
+        pub fn search_for_mapping(&mut self) {
+
+            while let Some(curr_config) = self.next_config(){
+                println!("Current config mapping: {:?}", curr_config);
+
+                let mut label_map = self.labelmapping_from_the_config(&curr_config).unwrap();
+                label_map.hashmaped_pairings_filling();
+                println!("Every hashmapping for every node configuration: {:?}", label_map.hashmaped_good_pairings());
+
+                let mut cartesian_labels_poss = label_map.cartesian_choices_hashed();
+
+                while let Some(curr) = cartesian_labels_poss.next() {
+                    // Get the possible labels for the current configuration
+                    let possible_labels = label_map.possible_labels(&curr);
+                    println!("\tPossible labels: {:?}", possible_labels);
+
+                    let mut possible = true;
+                    for edge_index in 0..self.input_all_node_config_passive.len() {
+                        // Generate the possible edges for the current edge index
+                        let edges = label_map.possible_edges(edge_index, &possible_labels);
+                        let line_edge = Line::parse(&edges, &mut HashMap::new()).unwrap();
+            
+                        // Print the edge index and corresponding edges
+                        println!(
+                            "\t\tEdge index: {}, Current label mapping: {:?}, Possible edges: {}",
+                            edge_index, curr, edges
+                        );
+
+                        if !self.output_problem.passive.includes(&line_edge) {
+                            possible = false;
+                            println!("\t\t\tFailed to find a possible mapping HERE.");
+                            //break;
+                        }
+                        
+                    }
+
+                    if(possible) {
+                        println!("\t\tFound a possible mapping");
+                        println!("\t\tConfig Mapping: {:?}", curr_config);
+                        println!("\t\tEdges: {:?}", possible_labels);
+                        println!("\t\tMapping: {:?}", curr);
+                        return;
+                    }
+                    else{
+                        println!("\t\tFailed to find a possible mapping");
+                    }
+                }
+            }
         }
 
         /// A testing function to see what does Pairings do.
@@ -492,6 +596,7 @@ pub mod mapping_problem {
 
             Ok(())
         }
+
     }
 }
 
@@ -502,6 +607,8 @@ mod tests {
     use permutator::CartesianProductIterator;
     use std::collections::{HashMap, HashSet};
     use streaming_iterator::StreamingIterator;
+    use round_eliminator_lib::line::Line;
+    use round_eliminator_lib::algorithms::event::EventHandler;
 
     use super::{
         mapping_problem::{ConfigurationsMapping, MappingProblem},
@@ -584,10 +691,10 @@ mod tests {
         let mut one_pairing = current_pairing[0].clone();
         println!(
             "Mapping from input line: {:?} to output line: {:?} with line describ {:?} to {:?}",
-            test.print_input_line_config(&test.input_all_node_config[one_pairing.1]),
-            test.print_output_line_config(&test.output_all_node_config[one_pairing.2]),
-            test.input_all_node_config[one_pairing.1],
-            test.output_all_node_config[one_pairing.2]
+            test.print_input_line_config(&test.input_all_node_config_active[one_pairing.1]),
+            test.print_output_line_config(&test.output_all_node_config_active[one_pairing.2]),
+            test.input_all_node_config_active[one_pairing.1],
+            test.output_all_node_config_active[one_pairing.2]
         );
 
         let true_asnwers: Vec<HashMap<Group, HashSet<Group>>> = vec![
@@ -909,7 +1016,7 @@ mod tests {
             // Get the possible labels for the current configuration
             let possible_labels = label_map.possible_labels(&curr);
 
-            for edge_index in 0..test.input_all_node_config.len() {
+            for edge_index in 0..test.input_all_node_config_active.len() {
                 // Generate the possible edges for the current edge index
                 let edges = label_map.possible_edges(edge_index, &possible_labels);
     
@@ -925,10 +1032,12 @@ mod tests {
 
     #[test]
     fn iterate_cartesians_1def_2coloring_edges() {
+        let mut out_p = Problem::from_string("A A X\nB B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap();
+        out_p.passive.maximize( &mut EventHandler::null());
         let mut test = MappingProblem::new(
             Problem::from_string("A A A\nA A X\nB B B\nB B Y\n\nA B\nA Y\nX B\nX Y\nX X\nX Y\nY Y")
                 .unwrap(),
-            Problem::from_string("A A X\nB B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap(),
+            out_p.clone(),
         );
         test.long_describ_problems();
         let curr_config = test.next_config().unwrap();
@@ -964,10 +1073,13 @@ mod tests {
 
             println!("Possible labels for gruops: {:?}", possible_labels);
 
-            for edge_index in 0..test.input_all_node_config.len() {
+            for edge_index in 0..test.input_all_node_config_active.len() {
                 // Generate the possible edges for the current edge index
                 let edges = label_map.possible_edges(edge_index, &possible_labels);
-    
+                let l1 = Line::parse(&edges, &mut HashMap::new()).unwrap();
+
+                //assert!(out_p.passive.includes(&l1));
+
                 // Print the edge index and corresponding edges
                 println!(
                     "Edge index: {}, Current label mapping: {:?}, Possible edges: {}",
@@ -975,5 +1087,68 @@ mod tests {
                 );
             }
         }
+
+    }
+
+    #[test]
+    fn iterate_cartesians_MIS_solution_search() {
+        let mut test = MappingProblem::new(
+            Problem::from_string("M M M\nP O O\n\nM P\nO OM")
+                .unwrap(),
+            Problem::from_string("A A X\nB B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap(),
+        );
+
+        test.maximize_out_problem();
+
+        test.long_describ_problems();
+
+        test.search_for_mapping();
+    }
+
+    #[test]
+    fn no_solution() {
+        let mut test = MappingProblem::new(
+            Problem::from_string("M M M\nP O O\n\nM P\nO OM")
+                .unwrap(),
+            Problem::from_string("T H H\nT H T\nT T H\nT T T\n\nH T").unwrap(),
+        );
+
+        test.maximize_out_problem();
+
+        test.long_describ_problems();
+
+        test.search_for_mapping();
+    }
+
+    #[test]
+    fn one_way_possible_labelling() {
+
+        let mut test = MappingProblem::new(
+            Problem::from_string("A A A\nA A X\nB B B\nB B Y\n\nA B\nA Y\nX B\nX Y\nX X\nX Y\nY Y")
+                .unwrap(),
+            Problem::from_string("A A X\nB B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap(),
+        );
+
+        test.maximize_out_problem();
+
+        test.long_describ_problems();
+
+        test.search_for_mapping();
+    }
+
+    #[test]
+    fn one_way_possible_harder_labelling() {
+
+        let mut test = MappingProblem::new(
+            Problem::from_string("A A A A A\nA A A A X\nB B B B B\nB B B B Y\n\nA B\nA Y\nX B\nX Y\nX X\nX Y\nY Y")
+                .unwrap(),
+            Problem::from_string("A A A A X\nB B B B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap(),
+        );
+
+        test.maximize_out_problem();
+
+        test.long_describ_problems();
+
+        test.search_for_mapping();
     }
 }
