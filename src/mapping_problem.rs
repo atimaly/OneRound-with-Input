@@ -15,6 +15,7 @@ pub mod mapping_problem {
     use std::iter::{Map, Repeat, Take};
     use std::ops::Range;
     use streaming_iterator::StreamingIterator;
+    use rayon::prelude::*;
 
     /// Given two LCl problems (input, output) it creates between the node configurations of
     /// the input and the output problems a surjective function.
@@ -331,7 +332,6 @@ pub mod mapping_problem {
                         
                         let mut in_group: Vec<u32> = label_set.iter().map(|l| l[0]).collect();
                         in_group.sort();
-                        
 
                         possibs = Part {
                             gtype: part.gtype,
@@ -522,18 +522,25 @@ pub mod mapping_problem {
         pub fn search_for_mapping(&mut self) -> bool {
 
             while let Some(curr_config) = self.next_config(){
+                if cfg!(debug_assertions) {
                 println!("Current config mapping: {:?}", curr_config);
+                }
 
                 let mut label_map = self.labelmapping_from_the_config(&curr_config).unwrap();
                 label_map.hashmaped_pairings_filling();
+
+                if cfg!(debug_assertions) {
                 println!("Every hashmapping for every node configuration: {:?}", label_map.hashmaped_good_pairings());
+                }
 
                 let mut cartesian_labels_poss = label_map.cartesian_choices_hashed();
 
                 while let Some(curr) = cartesian_labels_poss.next() {
                     // Get the possible labels for the current configuration
                     let possible_labels = label_map.possible_labels(&curr);
+                    if cfg!(debug_assertions) {
                     println!("\tPossible labels: {:?}", possible_labels);
+                    }
 
                     let mut possible = true;
                     for edge_index in 0..self.input_all_node_config_passive.len() {
@@ -542,49 +549,132 @@ pub mod mapping_problem {
                         //let line_edge = Line::parse(&edges, &mut HashMap::new()).unwrap();
             
                         // Print the edge index and corresponding edges
+                        #[cfg(debug_assertions)] {
                         println!(
                             "\t\tEdge index: {}, The edge: {:?}, Current label mapping: {:?}, Possible edges: {:?}",
                             edge_index, self.input_all_node_config_passive[edge_index], curr, line_edge
                         );
+                        }
 
                         if !self.output_problem.passive.includes(&line_edge) {
                             possible = false;
-                            println!("\t\t\tFailed to find a possible mapping HERE.");
-                            //break;
+                            //println!("\t\t\tFailed to find a possible mapping HERE.");
+                            break;
                         }
                         
                     }
 
                     if possible {
-                        println!("\t\tFound a possible mapping");
-                        println!("\t\tConfig Mapping: {:?}", curr_config);
-                        println!("\t\tEdges: {:?}", possible_labels);
-                        println!("\t\tMapping: {:?}", curr);
+                        #[cfg(debug_assertions)]
+                        {
+                            println!("\t\tFound a possible mapping");
+                            println!("\t\tConfig Mapping: {:?}", curr_config);
+                            println!("\t\tEdges: {:?}", possible_labels);
+                            println!("\t\tMapping: {:?}", curr);
+                        }
                         return true;
                     }
                     else{
-                        println!("\t\tFailed to find a possible mapping");
+                        #[cfg(debug_assertions)]
+                        {
+                            println!("\t\tFailed to find a possible mapping");
+                        }
                     }
                 }
             }
             return false;
         }
 
+
+        pub fn search_for_mapping_parallel(&mut self) -> bool {
+            // Collect all configurations from `next_config` into a vector
+            let configs: Vec<_> = std::iter::from_fn(|| self.next_config()).collect();
+        
+            // Use Rayon to process configurations in parallel
+            let found = configs.par_iter().any(|curr_config| {
+                if cfg!(debug_assertions) {
+                    println!("Current config mapping: {:?}", curr_config);
+                }
+        
+                let mut label_map = self.labelmapping_from_the_config(curr_config).unwrap();
+                label_map.hashmaped_pairings_filling();
+        
+                if cfg!(debug_assertions) {
+                    println!("Every hashmapping for every node configuration: {:?}", label_map.hashmaped_good_pairings());
+                }
+        
+                let mut cartesian_labels_poss = label_map.cartesian_choices_hashed();
+        
+                while let Some(curr) = cartesian_labels_poss.next() {
+                    // Get the possible labels for the current configuration
+                    let possible_labels = label_map.possible_labels(&curr);
+        
+                    if cfg!(debug_assertions) {
+                        println!("\tPossible labels: {:?}", possible_labels);
+                    }
+        
+                    let mut possible = true;
+        
+                    for edge_index in 0..self.input_all_node_config_passive.len() {
+                        // Generate the possible edges for the current edge index
+                        let line_edge = label_map.possible_edges(edge_index, &possible_labels);
+        
+                        #[cfg(debug_assertions)]
+                        {
+                            println!(
+                                "\t\tEdge index: {}, The edge: {:?}, Current label mapping: {:?}, Possible edges: {:?}",
+                                edge_index, self.input_all_node_config_passive[edge_index], curr, line_edge
+                            );
+                        }
+        
+                        if !self.output_problem.passive.includes(&line_edge) {
+                            possible = false;
+                            break;
+                        }
+                    }
+        
+                    if possible {
+                        #[cfg(debug_assertions)]
+                        {
+                            println!("\t\tFound a possible mapping");
+                            println!("\t\tConfig Mapping: {:?}", curr_config);
+                            println!("\t\tEdges: {:?}", possible_labels);
+                            println!("\t\tMapping: {:?}", curr);
+                        }
+                        return true;
+                    } else {
+                        #[cfg(debug_assertions)]
+                        {
+                            println!("\t\tFailed to find a possible mapping");
+                        }
+                    }
+                }
+                false
+            });
+        
+            found
+        }
+
         /// A testing function to see what does Pairings do.
         pub fn label_mapping_for_config(&mut self) -> Result<()> {
             while let Some(curr_config) = self.configurations_map.next() {
                 let mut label_map = self.labelmapping_from_the_config(&curr_config)?;
+                
+                if cfg!(debug_assertions) {
                 println!("Current configurations mapping: {:?}", curr_config);
-                //label_map.good_labeling_in_pairing();
+                }
                 label_map.all_possible_pairings_test()?;
+                if cfg!(debug_assertions) {
                 println!(
                     "All possible pairings in matrix form for this configuration mapping: {:?}",
                     label_map.all_good_pairings()
                 );
+            
                 println!(
                     "All possible pairings in hashmaped form: {:?}",
                     label_map.hashmaped_good_pairings()
                 );
+            }
                 //break;
             }
 
@@ -1146,6 +1236,7 @@ mod tests {
         test.long_describ_problems();
 
         assert_eq!(true, test.search_for_mapping());
+        assert_eq!(true, test.search_for_mapping_parallel());
 
         let mut test_backward = MappingProblem::new(
             Problem::from_string("A A A A X\nB B B B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap(),

@@ -711,6 +711,7 @@ dependencies = [
  "anyhow",
  "itertools 0.13.0",
  "permutator",
+ "rayon",
  "round-eliminator-lib",
  "russcip",
  "streaming-iterator",

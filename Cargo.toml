@@ -7,6 +7,7 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0"
+rayon = "1.10"
 itertools = "0.13.0"
 round-eliminator-lib = { path = "../round-eliminator-lib/"}
 permutator = {git = "https://github.com/olidennis/permutator.git"}
