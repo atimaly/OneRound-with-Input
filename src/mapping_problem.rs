@@ -312,45 +312,38 @@ pub mod mapping_problem {
 
 
         /// Given an edge from the input problem and the possible labelings that are achieved by the current $$f$$ config mapping and the label mappings $$g_l$$
-        /// returns all of the possible edges as string which can be interpreted as Line
-        pub fn possible_edges(&self,  edge_index: usize, possible_labelings: &HashMap<Group, HashSet<Group>>) -> String {
+        /// returns all of the possible edges as a Line
+        pub fn possible_edges(&self,  edge_index: usize, possible_labelings: &HashMap<Group, HashSet<Group>>) -> Line {
             assert!(edge_index < self.mapping_problem.input_all_node_config_passive.len());
             // Access parts for the given edge
             let parts = &self.mapping_problem.input_all_node_config_passive[edge_index].parts;
 
-            // Collect the mapping for label to string
-            let mapping: HashMap<u32, String> = self.mapping_problem
-                .output_problem
-                .mapping_label_text
-                .iter()
-                .cloned()
-                .collect();
 
             // Process each part of the edge, considering possible_labelings
-            parts
+            let parts_for_line = parts
             .iter()
             .map(|part| {
+                // Every part is one group which is one u32 value.
                 // Find possible labelings for the current group
-                let mut possibs: String = String::new();
+                let mut possibs: Part = part.clone();
                 for gr in part.group.iter()    {
                     if let Some(label_set) = possible_labelings.get(&part.group) {
-                        possibs = label_set.iter().map(|l| mapping.get(&l[0]).unwrap()).collect::<Vec<&String>>().into_iter().join("");
-                    }
-                }
-                if let GroupType::Many(exponent) = part.gtype {
-                    // Access the Exponent variable and perform operations
-                    if(exponent != 1) {
-                        possibs.push_str(&format!("^{}", exponent));
-                    }
-                    possibs
-                } else {
-                    // Handle the case where part.gtype is GroupType::Star
-                    // Add alternative logic here if necessary
-                    possibs
-                }
+                        
+                        let mut in_group: Vec<u32> = label_set.iter().map(|l| l[0]).collect();
+                        in_group.sort();
+                        
 
+                        possibs = Part {
+                            gtype: part.gtype,
+                            group: Group(in_group)
+                        }
+                    }
+                }
+                possibs
             })
-            .join(" ") // Join all parts with spaces to represent the full edge
+            .collect(); // Join all parts with spaces to represent the full edge
+
+            Line { parts: parts_for_line }
 
         }
 
@@ -525,8 +518,8 @@ pub mod mapping_problem {
             self.output_problem.passive.maximize(&mut EventHandler::null());
         }
 
-        /// Tries to find a correct mapping configuration.
-        pub fn search_for_mapping(&mut self) {
+        /// Tries to find a correct mapping configuration, that solves the problem.
+        pub fn search_for_mapping(&mut self) -> bool {
 
             while let Some(curr_config) = self.next_config(){
                 println!("Current config mapping: {:?}", curr_config);
@@ -545,13 +538,13 @@ pub mod mapping_problem {
                     let mut possible = true;
                     for edge_index in 0..self.input_all_node_config_passive.len() {
                         // Generate the possible edges for the current edge index
-                        let edges = label_map.possible_edges(edge_index, &possible_labels);
-                        let line_edge = Line::parse(&edges, &mut HashMap::new()).unwrap();
+                        let line_edge = label_map.possible_edges(edge_index, &possible_labels);
+                        //let line_edge = Line::parse(&edges, &mut HashMap::new()).unwrap();
             
                         // Print the edge index and corresponding edges
                         println!(
-                            "\t\tEdge index: {}, Current label mapping: {:?}, Possible edges: {}",
-                            edge_index, curr, edges
+                            "\t\tEdge index: {}, The edge: {:?}, Current label mapping: {:?}, Possible edges: {:?}",
+                            edge_index, self.input_all_node_config_passive[edge_index], curr, line_edge
                         );
 
                         if !self.output_problem.passive.includes(&line_edge) {
@@ -562,18 +555,19 @@ pub mod mapping_problem {
                         
                     }
 
-                    if(possible) {
+                    if possible {
                         println!("\t\tFound a possible mapping");
                         println!("\t\tConfig Mapping: {:?}", curr_config);
                         println!("\t\tEdges: {:?}", possible_labels);
                         println!("\t\tMapping: {:?}", curr);
-                        return;
+                        return true;
                     }
                     else{
                         println!("\t\tFailed to find a possible mapping");
                     }
                 }
             }
+            return false;
         }
 
         /// A testing function to see what does Pairings do.
@@ -609,13 +603,14 @@ mod tests {
     use streaming_iterator::StreamingIterator;
     use round_eliminator_lib::line::Line;
     use round_eliminator_lib::algorithms::event::EventHandler;
+    use round_eliminator_lib::group::{Group, GroupType, Label};
+        use round_eliminator_lib::part::Part;
 
     use super::{
         mapping_problem::{ConfigurationsMapping, MappingProblem},
         *,
     };
     use round_eliminator_lib::{
-        group::Group,
         problem::{self, Problem},
     };
 
@@ -1022,7 +1017,7 @@ mod tests {
     
                 // Print the edge index and corresponding edges
                 println!(
-                    "Edge index: {}, Current label mapping: {:?}, Possible edges: {}",
+                    "Edge index: {}, Current label mapping: {:?}, Possible edges: {:?}",
                     edge_index, curr, edges
                 );
             }
@@ -1076,13 +1071,13 @@ mod tests {
             for edge_index in 0..test.input_all_node_config_active.len() {
                 // Generate the possible edges for the current edge index
                 let edges = label_map.possible_edges(edge_index, &possible_labels);
-                let l1 = Line::parse(&edges, &mut HashMap::new()).unwrap();
+                //let l1 = Line::parse(&edges, &mut HashMap::new()).unwrap();
 
                 //assert!(out_p.passive.includes(&l1));
 
                 // Print the edge index and corresponding edges
                 println!(
-                    "Edge index: {}, Current label mapping: {:?}, Possible edges: {}",
+                    "Edge index: {}, Current label mapping: {:?}, Possible edges: {:?}",
                     edge_index, curr, edges
                 );
             }
@@ -1102,7 +1097,8 @@ mod tests {
 
         test.long_describ_problems();
 
-        test.search_for_mapping();
+        assert!(test.search_for_mapping());
+
     }
 
     #[test]
@@ -1117,7 +1113,7 @@ mod tests {
 
         test.long_describ_problems();
 
-        test.search_for_mapping();
+        assert_eq!(test.search_for_mapping(), false);
     }
 
     #[test]
@@ -1133,7 +1129,7 @@ mod tests {
 
         test.long_describ_problems();
 
-        test.search_for_mapping();
+        assert!(test.search_for_mapping());
     }
 
     #[test]
@@ -1149,6 +1145,61 @@ mod tests {
 
         test.long_describ_problems();
 
-        test.search_for_mapping();
+        assert_eq!(true, test.search_for_mapping());
+
+        let mut test_backward = MappingProblem::new(
+            Problem::from_string("A A A A X\nB B B B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap(),
+            Problem::from_string("A A A A A\nA A A A X\nB B B B B\nB B B B Y\n\nA B\nA Y\nX B\nX Y\nX X\nX Y\nY Y")
+                .unwrap(),
+        );
+
+        test_backward.maximize_out_problem();
+
+        test_backward.long_describ_problems();
+
+        assert_eq!(false, test_backward.search_for_mapping());
+    }
+
+    #[test]
+    fn includes_testing() {
+        let mut test = MappingProblem::new(
+            Problem::from_string("A A A\nA A X\nB B B\nB B Y\n\nA B\nA Y\nX B\nX Y\nX X\nX Y\nY Y")
+                .unwrap(),
+            Problem::from_string("A A X\nB B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap(),
+        );
+
+        test.long_describ_problems();
+        let prob = Problem::from_string("A A X\nB B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap();
+        
+        let l1 = Line{parts: vec![
+             Part {
+                gtype: GroupType::ONE,
+                group: Group(vec![2,3])
+            },  Part {
+                gtype: GroupType::ONE,
+                group: Group(vec![0,1])
+            }
+        ]};
+
+        assert_eq!(true, prob.passive.includes(&l1));
+
+        let l2 = Line{parts: vec![
+            Part {
+               gtype: GroupType::ONE,
+               group: Group(vec![2,3])
+           },  Part {
+               gtype: GroupType::ONE,
+               group: Group(vec![1,0])
+           }
+       ]};
+
+       assert_eq!(false, prob.passive.includes(&l2));
+
+
+        //let l2 = Line::parse("BY A", &mut HashMap::new()).unwrap();
+        //let l3 = Line::parse("B XA", &mut HashMap::new()).unwrap();
+        //let l4 = Line::parse("B A", &mut HashMap::new()).unwrap();
+        //println!("Testing the edge: {:?}", l1);
+        //assert!(prob.passive.includes(&l1));
     }
 }

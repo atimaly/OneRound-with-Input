@@ -1,0 +1,873 @@
+
+running 1 test
+Input active: [Line { parts: [Part { gtype: Many(3), group: Group([0]) }] }, Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(2), group: Group([0]) }] }, Line { parts: [Part { gtype: Many(3), group: Group([2]) }] }, Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(2), group: Group([2]) }] }]
+A^3
+X A^2
+B^3
+Y B^2
+Input passive: [Line { parts: [Part { gtype: Many(3), group: Group([0]) }] }, Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(2), group: Group([0]) }] }, Line { parts: [Part { gtype: Many(3), group: Group([2]) }] }, Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(2), group: Group([2]) }] }]
+A B
+A Y
+X B
+X Y
+X^2
+Y^2
+Output active: [Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(2), group: Group([0]) }] }, Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(2), group: Group([2]) }] }]
+X A^2
+Y B^2
+Output passive: [Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(2), group: Group([0]) }] }, Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(2), group: Group([2]) }] }]
+A^2
+A B
+A Y
+X B
+X Y
+B^2
+Current config mapping: [0, 0, 0, 0]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([0]), Group([1])}}], [{Group([1]): {Group([1])}, Group([0]): {Group([0])}}, {Group([1]): {Group([0])}, Group([0]): {Group([1]), Group([0])}}], [{Group([2]): {Group([1]), Group([0])}}], [{Group([2]): {Group([0])}, Group([3]): {Group([1])}}, {Group([2]): {Group([0]), Group([1])}, Group([3]): {Group([0])}}]]
+	Possible labels: {Group([3]): {Group([1])}, Group([0]): {Group([1]), Group([0])}, Group([1]): {Group([1])}, Group([2]): {Group([1]), Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([2]): {Group([0]), Group([1])}, Group([3]): {Group([0])}, Group([0]): {Group([1]), Group([0])}, Group([1]): {Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([2]): {Group([0]), Group([1])}, Group([1]): {Group([0])}, Group([0]): {Group([1]), Group([0])}, Group([3]): {Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([2]): {Group([1]), Group([0])}, Group([1]): {Group([0])}, Group([0]): {Group([1]), Group([0])}, Group([3]): {Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+Current config mapping: [0, 0, 0, 1]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([0]), Group([1])}}], [{Group([1]): {Group([1])}, Group([0]): {Group([0])}}, {Group([1]): {Group([0])}, Group([0]): {Group([1]), Group([0])}}], [{Group([2]): {Group([1]), Group([0])}}], [{Group([2]): {Group([2])}, Group([3]): {Group([3])}}, {Group([2]): {Group([3]), Group([2])}, Group([3]): {Group([2])}}]]
+	Possible labels: {Group([1]): {Group([1])}, Group([3]): {Group([3])}, Group([2]): {Group([0]), Group([2]), Group([1])}, Group([0]): {Group([0]), Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([3]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([0]), Group([1])}, Group([3]): {Group([2])}, Group([2]): {Group([1]), Group([2]), Group([3]), Group([0])}, Group([1]): {Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([0]), Group([1])}, Group([1]): {Group([0])}, Group([2]): {Group([2]), Group([0]), Group([1])}, Group([3]): {Group([3])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([3]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([2]): {Group([3]), Group([1]), Group([2]), Group([0])}, Group([0]): {Group([1]), Group([0])}, Group([3]): {Group([2])}, Group([1]): {Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+Current config mapping: [0, 0, 1, 0]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([1]), Group([0])}}], [{Group([0]): {Group([0])}, Group([1]): {Group([1])}}, {Group([1]): {Group([0])}, Group([0]): {Group([1]), Group([0])}}], [{Group([2]): {Group([3]), Group([2])}}], [{Group([2]): {Group([0])}, Group([3]): {Group([1])}}, {Group([2]): {Group([1]), Group([0])}, Group([3]): {Group([0])}}]]
+	Possible labels: {Group([1]): {Group([1])}, Group([0]): {Group([1]), Group([0])}, Group([2]): {Group([3]), Group([2]), Group([0])}, Group([3]): {Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([1]), Group([0])}, Group([1]): {Group([1])}, Group([2]): {Group([0]), Group([2]), Group([1]), Group([3])}, Group([3]): {Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([1]), Group([0])}, Group([1]): {Group([0])}, Group([2]): {Group([3]), Group([2]), Group([0])}, Group([3]): {Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([1]), Group([0])}, Group([1]): {Group([0])}, Group([2]): {Group([3]), Group([2]), Group([1]), Group([0])}, Group([3]): {Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+Current config mapping: [0, 0, 1, 1]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([1]), Group([0])}}], [{Group([0]): {Group([0])}, Group([1]): {Group([1])}}, {Group([1]): {Group([0])}, Group([0]): {Group([0]), Group([1])}}], [{Group([2]): {Group([3]), Group([2])}}], [{Group([2]): {Group([2])}, Group([3]): {Group([3])}}, {Group([2]): {Group([2]), Group([3])}, Group([3]): {Group([2])}}]]
+	Possible labels: {Group([1]): {Group([1])}, Group([0]): {Group([1]), Group([0])}, Group([2]): {Group([2]), Group([3])}, Group([3]): {Group([3])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([3]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([1]): {Group([1])}, Group([0]): {Group([0]), Group([1])}, Group([2]): {Group([3]), Group([2])}, Group([3]): {Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([3]): {Group([3])}, Group([0]): {Group([1]), Group([0])}, Group([1]): {Group([0])}, Group([2]): {Group([3]), Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([3]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([0]), Group([1])}, Group([1]): {Group([0])}, Group([2]): {Group([2]), Group([3])}, Group([3]): {Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+Current config mapping: [0, 1, 0, 0]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([1]), Group([0])}}], [{Group([1]): {Group([3])}, Group([0]): {Group([2])}}, {Group([0]): {Group([3]), Group([2])}, Group([1]): {Group([2])}}], [{Group([2]): {Group([1]), Group([0])}}], [{Group([3]): {Group([1])}, Group([2]): {Group([0])}}, {Group([2]): {Group([0]), Group([1])}, Group([3]): {Group([0])}}]]
+	Possible labels: {Group([1]): {Group([3])}, Group([3]): {Group([1])}, Group([0]): {Group([1]), Group([0]), Group([2])}, Group([2]): {Group([1]), Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([1]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([1]), Group([0]), Group([2])}, Group([1]): {Group([3])}, Group([2]): {Group([1]), Group([0])}, Group([3]): {Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([2]): {Group([1]), Group([0])}, Group([1]): {Group([2])}, Group([0]): {Group([3]), Group([1]), Group([2]), Group([0])}, Group([3]): {Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([1]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([3]): {Group([0])}, Group([2]): {Group([1]), Group([0])}, Group([0]): {Group([2]), Group([0]), Group([1]), Group([3])}, Group([1]): {Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+Current config mapping: [0, 1, 0, 1]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([0]), Group([1])}}], [{Group([1]): {Group([3])}, Group([0]): {Group([2])}}, {Group([1]): {Group([2])}, Group([0]): {Group([3]), Group([2])}}], [{Group([2]): {Group([1]), Group([0])}}], [{Group([2]): {Group([2])}, Group([3]): {Group([3])}}, {Group([3]): {Group([2])}, Group([2]): {Group([2]), Group([3])}}]]
+	Possible labels: {Group([0]): {Group([0]), Group([1]), Group([2])}, Group([2]): {Group([0]), Group([2]), Group([1])}, Group([1]): {Group([3])}, Group([3]): {Group([3])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([0]), Group([2]), Group([1])}, Group([3]): {Group([2])}, Group([2]): {Group([0]), Group([1]), Group([3]), Group([2])}, Group([1]): {Group([3])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([3]): {Group([3])}, Group([0]): {Group([1]), Group([2]), Group([0]), Group([3])}, Group([2]): {Group([1]), Group([0]), Group([2])}, Group([1]): {Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([3]): {Group([2])}, Group([1]): {Group([2])}, Group([0]): {Group([0]), Group([2]), Group([1]), Group([3])}, Group([2]): {Group([1]), Group([3]), Group([2]), Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+Current config mapping: [0, 1, 1, 0]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([1]), Group([0])}}], [{Group([0]): {Group([2])}, Group([1]): {Group([3])}}, {Group([0]): {Group([3]), Group([2])}, Group([1]): {Group([2])}}], [{Group([2]): {Group([2]), Group([3])}}], [{Group([2]): {Group([0])}, Group([3]): {Group([1])}}, {Group([2]): {Group([0]), Group([1])}, Group([3]): {Group([0])}}]]
+	Possible labels: {Group([3]): {Group([1])}, Group([0]): {Group([2]), Group([1]), Group([0])}, Group([1]): {Group([3])}, Group([2]): {Group([2]), Group([3]), Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([1]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([2]): {Group([0]), Group([2]), Group([1]), Group([3])}, Group([1]): {Group([3])}, Group([3]): {Group([0])}, Group([0]): {Group([0]), Group([1]), Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([1]): {Group([2])}, Group([0]): {Group([1]), Group([0]), Group([3]), Group([2])}, Group([2]): {Group([2]), Group([3]), Group([0])}, Group([3]): {Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([1]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([1]), Group([0]), Group([2]), Group([3])}, Group([3]): {Group([0])}, Group([2]): {Group([1]), Group([2]), Group([3]), Group([0])}, Group([1]): {Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+Current config mapping: [0, 1, 1, 1]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([1]), Group([0])}}], [{Group([1]): {Group([3])}, Group([0]): {Group([2])}}, {Group([0]): {Group([2]), Group([3])}, Group([1]): {Group([2])}}], [{Group([2]): {Group([2]), Group([3])}}], [{Group([3]): {Group([3])}, Group([2]): {Group([2])}}, {Group([2]): {Group([3]), Group([2])}, Group([3]): {Group([2])}}]]
+	Possible labels: {Group([3]): {Group([3])}, Group([1]): {Group([3])}, Group([0]): {Group([1]), Group([0]), Group([2])}, Group([2]): {Group([3]), Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([1]): {Group([3])}, Group([0]): {Group([0]), Group([2]), Group([1])}, Group([2]): {Group([2]), Group([3])}, Group([3]): {Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([3]): {Group([3])}, Group([0]): {Group([2]), Group([0]), Group([3]), Group([1])}, Group([2]): {Group([3]), Group([2])}, Group([1]): {Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([1]): {Group([2])}, Group([0]): {Group([0]), Group([3]), Group([2]), Group([1])}, Group([2]): {Group([2]), Group([3])}, Group([3]): {Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+Current config mapping: [1, 0, 0, 0]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([3]), Group([2])}}], [{Group([1]): {Group([1])}, Group([0]): {Group([0])}}, {Group([1]): {Group([0])}, Group([0]): {Group([0]), Group([1])}}], [{Group([2]): {Group([1]), Group([0])}}], [{Group([3]): {Group([1])}, Group([2]): {Group([0])}}, {Group([3]): {Group([0])}, Group([2]): {Group([1]), Group([0])}}]]
+	Possible labels: {Group([2]): {Group([1]), Group([0])}, Group([0]): {Group([0]), Group([3]), Group([2])}, Group([3]): {Group([1])}, Group([1]): {Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([1]): {Group([1])}, Group([0]): {Group([3]), Group([0]), Group([2])}, Group([3]): {Group([0])}, Group([2]): {Group([0]), Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([1]): {Group([0])}, Group([3]): {Group([1])}, Group([2]): {Group([0]), Group([1])}, Group([0]): {Group([0]), Group([3]), Group([2]), Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([0]), Group([3]), Group([2]), Group([1])}, Group([1]): {Group([0])}, Group([3]): {Group([0])}, Group([2]): {Group([1]), Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+Current config mapping: [1, 0, 0, 1]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([2]), Group([3])}}], [{Group([1]): {Group([1])}, Group([0]): {Group([0])}}, {Group([1]): {Group([0])}, Group([0]): {Group([1]), Group([0])}}], [{Group([2]): {Group([0]), Group([1])}}], [{Group([3]): {Group([3])}, Group([2]): {Group([2])}}, {Group([3]): {Group([2])}, Group([2]): {Group([3]), Group([2])}}]]
+	Possible labels: {Group([1]): {Group([1])}, Group([0]): {Group([2]), Group([0]), Group([3])}, Group([3]): {Group([3])}, Group([2]): {Group([1]), Group([2]), Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([3]), Group([0]), Group([2])}, Group([2]): {Group([1]), Group([3]), Group([2]), Group([0])}, Group([3]): {Group([2])}, Group([1]): {Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([1]): {Group([0])}, Group([2]): {Group([0]), Group([1]), Group([2])}, Group([3]): {Group([3])}, Group([0]): {Group([0]), Group([2]), Group([1]), Group([3])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([3]): {Group([2])}, Group([2]): {Group([3]), Group([1]), Group([2]), Group([0])}, Group([1]): {Group([0])}, Group([0]): {Group([3]), Group([2]), Group([0]), Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+Current config mapping: [1, 0, 1, 0]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([2]), Group([3])}}], [{Group([1]): {Group([1])}, Group([0]): {Group([0])}}, {Group([0]): {Group([1]), Group([0])}, Group([1]): {Group([0])}}], [{Group([2]): {Group([3]), Group([2])}}], [{Group([2]): {Group([0])}, Group([3]): {Group([1])}}, {Group([3]): {Group([0])}, Group([2]): {Group([0]), Group([1])}}]]
+	Possible labels: {Group([0]): {Group([0]), Group([3]), Group([2])}, Group([1]): {Group([1])}, Group([2]): {Group([3]), Group([0]), Group([2])}, Group([3]): {Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([1]): {Group([1])}, Group([3]): {Group([0])}, Group([0]): {Group([0]), Group([2]), Group([3])}, Group([2]): {Group([3]), Group([1]), Group([2]), Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([2]): {Group([2]), Group([3]), Group([0])}, Group([0]): {Group([3]), Group([2]), Group([1]), Group([0])}, Group([1]): {Group([0])}, Group([3]): {Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([3]): {Group([0])}, Group([2]): {Group([1]), Group([3]), Group([0]), Group([2])}, Group([1]): {Group([0])}, Group([0]): {Group([1]), Group([0]), Group([3]), Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+Current config mapping: [1, 0, 1, 1]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([3]), Group([2])}}], [{Group([0]): {Group([0])}, Group([1]): {Group([1])}}, {Group([1]): {Group([0])}, Group([0]): {Group([1]), Group([0])}}], [{Group([2]): {Group([3]), Group([2])}}], [{Group([3]): {Group([3])}, Group([2]): {Group([2])}}, {Group([3]): {Group([2])}, Group([2]): {Group([2]), Group([3])}}]]
+	Possible labels: {Group([3]): {Group([3])}, Group([0]): {Group([3]), Group([2]), Group([0])}, Group([1]): {Group([1])}, Group([2]): {Group([3]), Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([1]): {Group([1])}, Group([3]): {Group([2])}, Group([0]): {Group([0]), Group([3]), Group([2])}, Group([2]): {Group([3]), Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 2, 3]) }, Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([3]): {Group([3])}, Group([1]): {Group([0])}, Group([2]): {Group([3]), Group([2])}, Group([0]): {Group([3]), Group([1]), Group([2]), Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([3]): {Group([2])}, Group([1]): {Group([0])}, Group([0]): {Group([2]), Group([1]), Group([3]), Group([0])}, Group([2]): {Group([3]), Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }, Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+Current config mapping: [1, 1, 0, 0]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([3]), Group([2])}}], [{Group([0]): {Group([2])}, Group([1]): {Group([3])}}, {Group([1]): {Group([2])}, Group([0]): {Group([2]), Group([3])}}], [{Group([2]): {Group([1]), Group([0])}}], [{Group([2]): {Group([0])}, Group([3]): {Group([1])}}, {Group([3]): {Group([0])}, Group([2]): {Group([1]), Group([0])}}]]
+	Possible labels: {Group([0]): {Group([3]), Group([2])}, Group([1]): {Group([3])}, Group([2]): {Group([1]), Group([0])}, Group([3]): {Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([1]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([1]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([1]): {Group([3])}, Group([2]): {Group([1]), Group([0])}, Group([3]): {Group([0])}, Group([0]): {Group([3]), Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([2]): {Group([1]), Group([0])}, Group([3]): {Group([1])}, Group([0]): {Group([2]), Group([3])}, Group([1]): {Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([1]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([1]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([1]): {Group([2])}, Group([2]): {Group([0]), Group([1])}, Group([0]): {Group([3]), Group([2])}, Group([3]): {Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0, 1]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+Current config mapping: [1, 1, 0, 1]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([3]), Group([2])}}], [{Group([0]): {Group([2])}, Group([1]): {Group([3])}}, {Group([1]): {Group([2])}, Group([0]): {Group([2]), Group([3])}}], [{Group([2]): {Group([1]), Group([0])}}], [{Group([2]): {Group([2])}, Group([3]): {Group([3])}}, {Group([3]): {Group([2])}, Group([2]): {Group([2]), Group([3])}}]]
+	Possible labels: {Group([3]): {Group([3])}, Group([1]): {Group([3])}, Group([0]): {Group([3]), Group([2])}, Group([2]): {Group([1]), Group([0]), Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([1]): {Group([3])}, Group([0]): {Group([2]), Group([3])}, Group([2]): {Group([1]), Group([0]), Group([3]), Group([2])}, Group([3]): {Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([1]): {Group([2])}, Group([2]): {Group([1]), Group([2]), Group([0])}, Group([0]): {Group([3]), Group([2])}, Group([3]): {Group([3])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0, 1, 2]) }] }
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([3]), Group([2])}, Group([1]): {Group([2])}, Group([2]): {Group([1]), Group([3]), Group([2]), Group([0])}, Group([3]): {Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+Current config mapping: [1, 1, 1, 0]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([2]), Group([3])}}], [{Group([0]): {Group([2])}, Group([1]): {Group([3])}}, {Group([1]): {Group([2])}, Group([0]): {Group([3]), Group([2])}}], [{Group([2]): {Group([2]), Group([3])}}], [{Group([3]): {Group([1])}, Group([2]): {Group([0])}}, {Group([3]): {Group([0])}, Group([2]): {Group([1]), Group([0])}}]]
+	Possible labels: {Group([1]): {Group([3])}, Group([0]): {Group([2]), Group([3])}, Group([3]): {Group([1])}, Group([2]): {Group([3]), Group([2]), Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([1]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([1]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([1]): {Group([3])}, Group([0]): {Group([3]), Group([2])}, Group([3]): {Group([0])}, Group([2]): {Group([0]), Group([3]), Group([2]), Group([1])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([3]): {Group([1])}, Group([0]): {Group([3]), Group([2])}, Group([2]): {Group([2]), Group([3]), Group([0])}, Group([1]): {Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([1]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([1]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([1]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([2]), Group([3])}, Group([1]): {Group([2])}, Group([2]): {Group([1]), Group([0]), Group([2]), Group([3])}, Group([3]): {Group([0])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0, 1, 2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([0]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([0]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+Current config mapping: [1, 1, 1, 1]
+Every hashmapping for every node configuration: [[{Group([0]): {Group([3]), Group([2])}}], [{Group([1]): {Group([3])}, Group([0]): {Group([2])}}, {Group([1]): {Group([2])}, Group([0]): {Group([3]), Group([2])}}], [{Group([2]): {Group([3]), Group([2])}}], [{Group([3]): {Group([3])}, Group([2]): {Group([2])}}, {Group([3]): {Group([2])}, Group([2]): {Group([2]), Group([3])}}]]
+	Possible labels: {Group([0]): {Group([3]), Group([2])}, Group([3]): {Group([3])}, Group([2]): {Group([3]), Group([2])}, Group([1]): {Group([3])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([2]), Group([3])}, Group([1]): {Group([3])}, Group([3]): {Group([2])}, Group([2]): {Group([2]), Group([3])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }, Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 0, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([3]), Group([2])}, Group([3]): {Group([3])}, Group([1]): {Group([2])}, Group([2]): {Group([2]), Group([3])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 0], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([3]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+	Possible labels: {Group([0]): {Group([3]), Group([2])}, Group([2]): {Group([3]), Group([2])}, Group([1]): {Group([2])}, Group([3]): {Group([2])}}
+		Edge index: 0, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 1, The edge: Line { parts: [Part { gtype: Many(1), group: Group([0]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2, 3]) }, Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 2, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([2]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([2, 3]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 3, The edge: Line { parts: [Part { gtype: Many(1), group: Group([1]) }, Part { gtype: Many(1), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }, Part { gtype: Many(1), group: Group([2]) }] }
+		Edge index: 4, The edge: Line { parts: [Part { gtype: Many(2), group: Group([1]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Edge index: 5, The edge: Line { parts: [Part { gtype: Many(2), group: Group([3]) }] }, Current label mapping: [0, 1, 0, 1], Possible edges: Line { parts: [Part { gtype: Many(1), group: Group([2]) }] }
+			Failed to find a possible mapping HERE.
+		Failed to find a possible mapping
+test mapping_problem::tests::one_way_possible_labelling ... FAILED
+
+failures:
+
+failures:
+    mapping_problem::tests::one_way_possible_labelling
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 18 filtered out; finished in 0.02s
+
