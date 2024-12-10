@@ -586,6 +586,7 @@ pub mod mapping_problem {
         }
 
 
+        /// Tries to find a correct mapping configuration, that solves the problem in parallel.
         pub fn search_for_mapping_parallel(&mut self) -> bool {
             // Collect all configurations from `next_config` into a vector
             let configs: Vec<_> = std::iter::from_fn(|| self.next_config()).collect();
@@ -598,6 +599,7 @@ pub mod mapping_problem {
         
                 let mut label_map = self.labelmapping_from_the_config(curr_config).unwrap();
                 label_map.hashmaped_pairings_filling();
+                label_map.hashed_pairings_reducing();
         
                 if cfg!(debug_assertions) {
                     println!("Every hashmapping for every node configuration: {:?}", label_map.hashmaped_good_pairings());
@@ -700,6 +702,9 @@ mod tests {
         mapping_problem::{ConfigurationsMapping, MappingProblem},
         *,
     };
+
+    use std::time::{Duration, Instant};
+
     use round_eliminator_lib::{
         problem::{self, Problem},
     };
@@ -1196,7 +1201,7 @@ mod tests {
         let mut test = MappingProblem::new(
             Problem::from_string("M M M\nP O O\n\nM P\nO OM")
                 .unwrap(),
-            Problem::from_string("T H H\nT H T\nT T H\nT T T\n\nH T").unwrap(),
+            Problem::from_string("T H HT\nT T H\nT T T\n\nH T").unwrap(),
         );
 
         test.maximize_out_problem();
@@ -1211,6 +1216,22 @@ mod tests {
 
         let mut test = MappingProblem::new(
             Problem::from_string("A A A\nA A X\nB B B\nB B Y\n\nA B\nA Y\nX B\nX Y\nX X\nX Y\nY Y")
+                .unwrap(),
+            Problem::from_string("A A X\nB B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap(),
+        );
+
+        test.maximize_out_problem();
+
+        test.long_describ_problems();
+
+        assert!(test.search_for_mapping());
+    }
+
+    #[test]
+    fn one_way_possible_labelling_compact_form() {
+
+        let mut test = MappingProblem::new(
+            Problem::from_string("A A AX\nB B BY\n\nA YB\nX YBX\nY Y")
                 .unwrap(),
             Problem::from_string("A A X\nB B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap(),
         );
@@ -1249,6 +1270,52 @@ mod tests {
         test_backward.long_describ_problems();
 
         assert_eq!(false, test_backward.search_for_mapping());
+        assert_eq!(false, test_backward.search_for_mapping_parallel());
+    }
+
+
+    #[test]
+    fn one_way_possible_labelling_compact_form_large() {
+
+        let mut test = MappingProblem::new(
+            Problem::from_string("A A A A A AX\nB B B B B BY\n\nA YB\nX YBX\nY Y")
+                .unwrap(),
+            Problem::from_string("A A A A A X\nB B B B B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap(),
+        );
+
+        test.maximize_out_problem();
+
+        test.long_describ_problems();
+
+        assert!(test.search_for_mapping());
+    }
+
+    #[test]
+    fn parallel_vs_sequential() {
+
+        let mut test = MappingProblem::new(
+            Problem::from_string("A A A A A AX\nB B B B B BY\n\nA YB\nX YBX\nY Y")
+                .unwrap(),
+            Problem::from_string("A A A A A X\nB B B B B Y\n\nA B\nA A\nA Y\nB X\nB B\nX B\nY A\nX Y").unwrap(),
+        );
+
+        test.maximize_out_problem();
+
+        test.long_describ_problems();
+
+        let start = Instant::now();
+
+        assert!(test.search_for_mapping());
+        let duration = start.elapsed();
+
+        println!("Time elapsed in expensive_function() is: {:?}", duration);
+
+        let start = Instant::now();
+
+        assert!(test.search_for_mapping_parallel());
+        let duration = start.elapsed();
+
+        println!("Time elapsed in expensive_function() is: {:?}", duration);
     }
 
     #[test]
